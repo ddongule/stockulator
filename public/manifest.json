@@ -1,0 +1,7 @@
+{
+  "short_name": "boilerplate",
+  "name": "react snowpack boilerplate",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone"
+}
