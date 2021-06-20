@@ -1,7 +1,7 @@
 {
   "scripts": {
     "heroku-postbuild": "npm install && snowpack build && (cd server && npm install)",
-    "start-client": "snowpack dev",
+    "dev": "snowpack dev",
     "build": "snowpack build && (cd server && npm install)",
     "start": "node server/server.js"
   },

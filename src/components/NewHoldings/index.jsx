@@ -7,7 +7,7 @@ import { LOCALE } from '../../constants/locale';
 import { StockContext } from '../../context/StockContext';
 import { currencyFormatter } from '../../utils/numberFormatter';
 import { getData } from '../../service/getData';
-import loadingImage from '../../images/loading.gif';
+import loadingImage from './loading.gif';
 
 const NewHoldings = () => {
   const [isLoading, setIsLoading] = useState(false);
