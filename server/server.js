@@ -6,11 +6,15 @@ const api = require('./routes/index');
 
 const PORT = process.env.PORT || 4000;
 
+const buildPath = path.join(__dirname, '..', 'build');
+app.use(express.static(buildPath));
+
 app.use(cors());
 app.use('/api', api);
 
-const buildPath = path.join(__dirname, '..', 'build');
-app.use(express.static(buildPath));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+});
 
 app.listen(PORT, () =>
   console.log(`
