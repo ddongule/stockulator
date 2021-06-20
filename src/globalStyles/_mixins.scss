@@ -1,0 +1,75 @@
+@import './variables';
+
+@function size($key) {
+  @if map-has-key($size, $key) {
+    @return map-get($size, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $size!";
+  @return null;
+}
+
+@function weight($key) {
+  @if map-has-key($weight, $key) {
+    @return map-get($weight, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $weight!";
+  @return null;
+}
+
+@function color($key) {
+  @if map-has-key($color, $key) {
+    @return map-get($color, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors!";
+  @return null;
+}
+
+@mixin mobile {
+  @media (min-width: $breakpoint-zero) and (max-width: $breakpoint-mobile - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop - 1px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@keyframes blinkGrey {
+  0% {
+    color: color(alert-deep);
+  }
+
+  50% {
+    color: color(alert-deep);
+  }
+
+  100% {
+    color: color(main);
+  }
+}
+
+@keyframes blinkRed {
+  0% {
+    background: color(alert-deep);
+  }
+
+  50% {
+    background: color(alert-deep);
+  }
+
+  100% {
+    background: color(alert-deeper);
+    border-color: color(alert-deep);
+  }
+}

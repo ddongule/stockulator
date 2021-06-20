@@ -1,0 +1,107 @@
+@use '../../globalStyles/mixins' as m;
+@use '../../globalStyles/variables' as v;
+
+.loading {
+  text-align: center;
+  margin-top: 2rem;
+
+  img {
+    width: 2rem;
+  }
+}
+
+.new-holdings-wrapper {
+  text-align: center;
+
+  .real-time-stock-price {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+
+    .company-name {
+      margin-right: 0.625rem;
+      font-size: m.size(large-5);
+      font-weight: m.weight(bold);
+    }
+
+    .price {
+      font-size: m.size(large-5);
+      font-weight: m.weight(bold);
+    }
+
+    .real-time {
+      border: 1px solid m.color(alert-deeper);
+      background: m.color(alert-deep);
+      font-size: m.size(small-2);
+      color: m.color(white);
+      font-weight: m.weight(medium);
+      border-radius: v.$border-radius;
+      padding: 2px 6px;
+      display: inline-block;
+      height: fit-content;
+      margin-right: 0.25rem;
+      animation: blinkRed 1s infinite;
+    }
+  }
+
+  .money-needed {
+    margin-top: 1.5rem;
+    box-shadow: v.$box-shadow;
+    border-radius: v.$border-radius-medium;
+    padding-top: 1rem;
+
+    .current-holdings-input-wrapper {
+      margin: 0;
+    }
+
+    .new-quantity-container {
+      label {
+        font-size: m.size(large-0);
+        padding: 0 1rem;
+      }
+
+      input {
+        width: 25%;
+        text-align: center;
+        font-size: m.size(large-0);
+        font-weight: m.weight(semi-bold);
+      }
+    }
+
+    .total-price {
+      margin-top: 1rem;
+      font-size: m.size(large-1);
+      font-weight: m.weight(semi-bold);
+      background: white;
+      padding: 0.75rem;
+      border-radius: 0 0 v.$border-radius-medium v.$border-radius-medium;
+      border-top: 1px solid m.color(grey-6);
+
+      .strong {
+        font-family: 'surround';
+      }
+    }
+  }
+}
+
+@include m.mobile {
+  .real-time-stock-price {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    gap: 0.225rem;
+
+    & > span:first-child {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .money-needed {
+    input {
+      padding: 0;
+    }
+  }
+}

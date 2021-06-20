@@ -1,15 +1,25 @@
 {
   "scripts": {
+    "heroku-postbuild": "npm start && npm build && node server/server.js",
     "start": "snowpack dev",
-    "build": "snowpack build"
+    "build": "snowpack build",
+    "server": "node server/server.js"
   },
   "devDependencies": {
-    "snowpack": "^3.5.7",
     "@snowpack/plugin-webpack": "^2.3.1",
-    "@snowpack/plugin-react-refresh": "^2.5.0"
+    "@snowpack/plugin-react-refresh": "^2.5.0",
+    "@snowpack/plugin-run-script": "^2.3.0",
+    "@snowpack/plugin-sass": "^1.4.0",
+    "snowpack": "^3.5.7"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^2.0.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "yahoo-stock-prices": "^1.1.0"
   }
 }

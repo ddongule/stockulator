@@ -1,17 +1,14 @@
 export default {
   mount: {
-    public: { url: '/', static: true },
     src: { url: '/dist' },
+    public: { url: '/', static: true },
   },
   plugins: [
     [
+      '@snowpack/plugin-sass',
       '@snowpack/plugin-react-refresh',
       '@snowpack/plugin-webpack',
       '@snowpack/plugin-run-script',
-      {
-        cmd: 'eslint src --ext .js,.jsx,.ts,.tsx',
-        watch: 'esw -w --clear src --ext .js,.jsx,.ts,.tsx',
-      },
     ],
   ],
   routes: [{ match: 'routes', src: '.*', dest: '/index.html' }],

@@ -1,0 +1,28 @@
+@use "../../globalStyles/mixins" as m;
+
+.current-holdings-input-wrapper {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: m.size(large-0);
+  font-weight: m.weight(medium);
+
+  .strong {
+    font-family: 'surround';
+  }
+
+  input {
+    text-align: center;
+
+    &[name='holdings-price'] {
+      width: 40%;
+    }
+
+    &[name='quantity'] {
+      width: 30%;
+    }
+  }
+}

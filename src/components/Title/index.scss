@@ -1,0 +1,32 @@
+@use '../../globalStyles/mixins' as m;
+@use '../../globalStyles/variables' as v;
+
+.sub-title {
+  display: inline;
+  text-align: center;
+  border: 1px solid m.color(grey-5);
+  border-radius: v.$border-radius;
+  padding: 5px 10px;
+  background-color: m.color(white);
+  user-select: none;
+
+  .strong {
+    font-family: 'surround';
+    color: m.color(alert);
+    animation: blinkGrey 1s infinite;
+  }
+}
+
+.title {
+  font-family: 'surround';
+  font-size: m.size(huge-0);
+  font-weight: m.weight(black);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@include m.mobile {
+  .title {
+    font-size: m.size(large-10);
+  }
+}

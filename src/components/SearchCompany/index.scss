@@ -1,0 +1,43 @@
+@use '../../globalStyles/mixins' as m;
+@use '../../globalStyles/variables' as v;
+
+.company-search-form {
+  margin-top: 2rem;
+  font-size: m.size(large-1);
+  font-weight: m.weight(bold);
+  color: m.color(grey-9);
+  text-align: center;
+  position: relative;
+  margin-bottom: 0.5rem;
+
+  .search-input {
+    background: m.color(white);
+    border: 1px solid m.color(grey-2);
+    box-shadow: v.$box-shadow;
+    padding: 0.75rem 1.5rem 0.625rem 1.5rem;
+    border-radius: 0.825rem;
+    width: 100%;
+  }
+
+  .search-button {
+    position: absolute;
+    font-size: inherit;
+    margin-left: 1rem;
+    right: 2rem;
+    transform: translateY(-50%);
+    top: 50%;
+    width: 1.625rem;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.alert {
+  color: m.color(alert-deep);
+  font-size: m.size(small-1);
+  text-align: center;
+}

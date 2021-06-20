@@ -1,7 +1,13 @@
+import Home from './components/pages/Home';
 import React from 'react';
+import { StockContextProvider } from './context/StockContext';
 
 function App() {
-  return <div id='app'>자 이제 시작이야</div>;
+  return (
+    <StockContextProvider>
+      <Home />
+    </StockContextProvider>
+  );
 }
 
 export default App;

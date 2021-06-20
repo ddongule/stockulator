@@ -1,0 +1,27 @@
+@use '../../globalStyles/mixins' as m;
+
+.current-holdings-total-price {
+  margin: 2rem 0 1.5rem 0;
+  font-size: m.size(large-5);
+  font-weight: m.weight(bold);
+  color: m.color(grey-9);
+  text-align: center;
+  line-height: 1.4;
+
+  .price {
+    font-family: 'surround';
+    color: m.color(main);
+    font-size: m.size(large-6);
+    text-decoration: underline;
+  }
+}
+
+@include m.mobile {
+  .current-holdings-total-price {
+    font-size: m.size(large-0);
+
+    .price {
+      font-size: m.size(large-3);
+    }
+  }
+}
