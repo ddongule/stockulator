@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "heroku-postbuild": "npm start && npm build && node server/server.js",
+    "heroku-postbuild": "npm && npm build && node server/server.js",
     "start": "snowpack dev",
     "build": "snowpack build",
     "server": "node server/server.js"
