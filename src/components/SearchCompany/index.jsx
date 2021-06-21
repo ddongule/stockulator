@@ -1,18 +1,27 @@
 import './index.scss';
 
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { StockContext } from '../../context/StockContext';
+import { getData } from '../../service/getData';
 import { stockData } from '../../data/stock-code-kr';
 
 const SearchCompany = () => {
   const [userInput, setUserInput] = useState('');
   const [isInputValid, setIsInputValid] = useState(true);
-  const { setCompany } = useContext(StockContext);
+  const { setNewPrice, setIsLoading, setNewQuantity, setCurrentQuantity, setCompany } =
+    useContext(StockContext);
 
-  const search = (e) => {
+  const setPrice = async (company) => {
+    const newPrice = await getData(company);
+    setNewPrice(newPrice);
+    setNewQuantity(0);
+    setCurrentQuantity(0);
+    setIsLoading(false);
+  };
+
+  const search = async (e) => {
     e.preventDefault();
-
     const company = stockData.find(({ companyName }) => companyName === userInput);
 
     if (company === undefined) {
@@ -20,9 +29,12 @@ const SearchCompany = () => {
 
       return;
     }
+    setIsLoading(true);
 
     setCompany(company);
     setIsInputValid(true);
+
+    await setPrice(company);
   };
 
   return (

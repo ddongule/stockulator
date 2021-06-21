@@ -6,22 +6,12 @@ import HoldingsInput from '../HoldingsInput';
 import { LOCALE } from '../../constants/locale';
 import { StockContext } from '../../context/StockContext';
 import { currencyFormatter } from '../../utils/numberFormatter';
-import { getData } from '../../service/getData';
 
 const NewHoldings = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const { company, newPrice, setNewPrice, newQuantity, setNewQuantity } = useContext(StockContext);
+  const { isLoading, company, newPrice, newQuantity, setNewQuantity } = useContext(StockContext);
 
   const totalPrice = currencyFormatter(LOCALE.KR, newPrice * newQuantity);
   const newKoreanPrice = currencyFormatter(LOCALE.KR, newPrice);
-
-  useEffect(async () => {
-    setIsLoading(true);
-    const result = await getData(company);
-
-    setIsLoading(false);
-    setNewPrice(result);
-  }, [company]);
 
   const validateInput = ({ target: { value } }) => {
     setNewQuantity(Number(value));
@@ -33,7 +23,7 @@ const NewHoldings = () => {
 
   return (
     <>
-      {!!company.companyName && !!isLoading && (
+      {!!company.companyName && isLoading && (
         <div className='loading'>
           <img src='https://s6.gifyu.com/images/loading7ac014ea623c7062.gif' alt='loadingImage' />
         </div>

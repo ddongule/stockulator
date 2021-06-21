@@ -8,6 +8,7 @@ export const StockContextProvider = ({ children }) => {
   const [company, setCompany] = useState({});
   const [newPrice, setNewPrice] = useState(0);
   const [newQuantity, setNewQuantity] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <StockContext.Provider
@@ -22,6 +23,8 @@ export const StockContextProvider = ({ children }) => {
         setNewPrice,
         newQuantity,
         setNewQuantity,
+        isLoading,
+        setIsLoading,
       }}
     >
       {children}

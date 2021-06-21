@@ -7,6 +7,7 @@ import { StockContext } from '../../context/StockContext';
 
 const CurrentHoldings = () => {
   const {
+    newPrice,
     company,
     newQuantity,
     setCurrentHoldingsPrice,
@@ -33,7 +34,7 @@ const CurrentHoldings = () => {
 
   return (
     <>
-      {!!company && !!newQuantity && (
+      {!!company && newQuantity !== 0 && (
         <div className='current-holdings-form-wrapper'>
           <div className='container'>
             <div className='input-container'>
