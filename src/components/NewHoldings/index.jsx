@@ -7,7 +7,6 @@ import { LOCALE } from '../../constants/locale';
 import { StockContext } from '../../context/StockContext';
 import { currencyFormatter } from '../../utils/numberFormatter';
 import { getData } from '../../service/getData';
-import loadingImage from './loading.gif';
 
 const NewHoldings = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -36,7 +35,7 @@ const NewHoldings = () => {
     <>
       {!!company.companyName && isLoading && (
         <div className='loading'>
-          <img src={loadingImage} alt='loadingImage' />
+          <img src='https://s6.gifyu.com/images/loading7ac014ea623c7062.gif' alt='loadingImage' />
         </div>
       )}
       {!isLoading && (

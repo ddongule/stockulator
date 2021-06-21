@@ -1,7 +1,7 @@
 export default {
   mount: {
     src: { url: '/dist' },
-    public: { url: '/', static: true },
+    public: { url: '/' },
   },
   plugins: [
     [
@@ -25,6 +25,6 @@ export default {
     /* ... */
   },
   alias: {
-    '@components': './src/components',
+    // '@components': './src/components',
   },
 };

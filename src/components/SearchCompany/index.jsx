@@ -3,7 +3,7 @@ import './index.scss';
 import React, { useContext, useState } from 'react';
 
 import { StockContext } from '../../context/StockContext';
-import stockData from './stock-code-kr.json';
+import { stockData } from '../../data/stock-code-kr';
 
 const SearchCompany = () => {
   const [userInput, setUserInput] = useState('');
