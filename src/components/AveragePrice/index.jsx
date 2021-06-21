@@ -7,7 +7,8 @@ import { StockContext } from '../../context/StockContext';
 import { currencyFormatter } from '../../utils/numberFormatter';
 
 const AveragePrice = () => {
-  const { currentQuantity, newQuantity, currentHoldingsPrice, newPrice } = useContext(StockContext);
+  const { company, currentQuantity, newQuantity, currentHoldingsPrice, newPrice } =
+    useContext(StockContext);
 
   const averagePrice = Math.floor(
     (currentQuantity * currentHoldingsPrice + newQuantity * newPrice) /
@@ -18,7 +19,7 @@ const AveragePrice = () => {
 
   return (
     <>
-      {!isNaN(averagePrice) && (
+      {!!company.companyName && newPrice && !isNaN(averagePrice) && (
         <div className='current-holdings-total-price'>
           지금 구매하시면 평균 가격이 <br /> <span className='price'>{formattedPrice}원</span>이
           되네요!
