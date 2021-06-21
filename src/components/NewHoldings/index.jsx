@@ -33,7 +33,7 @@ const NewHoldings = () => {
 
   return (
     <>
-      {!!company.companyName && isLoading && (
+      {!!company.companyName && !!isLoading && (
         <div className='loading'>
           <img src='https://s6.gifyu.com/images/loading7ac014ea623c7062.gif' alt='loadingImage' />
         </div>
