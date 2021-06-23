@@ -1,7 +1,14 @@
 {
-  "short_name": "boilerplate",
-  "name": "react snowpack boilerplate",
-  "icons": [],
+  "short_name": "stockulator",
+  "name": "stockulator",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon"
+    }
+  ],
   "start_url": ".",
-  "display": "standalone"
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
